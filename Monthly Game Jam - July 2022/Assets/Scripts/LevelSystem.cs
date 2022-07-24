@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class LevelSystem : MonoBehaviour
 {
+
+    // Public variables
+    public UIManager UI;
+
     // Private variables
     private int level;
     private int currentXP;
@@ -25,6 +29,9 @@ public class LevelSystem : MonoBehaviour
             level++;
             currentXP -= xpToNextLevel;
             xpToNextLevel = (int)(xpToNextLevel * 1.1);
+            UI.UpdateLevelText("" + level);
         }
+
+        UI.UpdateXPBar((float)currentXP / (float)xpToNextLevel);
     }
 }
