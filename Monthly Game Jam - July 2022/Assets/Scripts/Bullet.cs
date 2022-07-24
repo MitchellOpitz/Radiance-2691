@@ -1,39 +1,26 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public int power = 5;
 
+    // Public variables
+    public int damage = 5;
     // public GameObject hitEffect;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
+    // Occurs when bullet exits Field of Play game object.
+    void OnTriggerExit2D(Collider2D collision)
     {
         Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-        // Destroy(effect, 5f);
+        // Destroy(effect, 5f);  // Cleans up hit effects game objects in the hierarchy.
 
         if(collision.transform.tag == "Enemy")
-        {
-            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(power);
-        }
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
 
         Destroy(gameObject);
     }

@@ -1,37 +1,37 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
+
+    // Public variables
     public float moveSpeed = 10f;
     public Rigidbody2D rb;
 
-    Transform target;
+    // Class variables
+    Transform player;
     Vector2 moveDirection;
 
-    // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (target)
+        if (player)
         {
-            Vector3 direction = (target.position - transform.position).normalized;
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            moveDirection = (player.position - transform.position).normalized;
+
+            float angle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg;
             rb.rotation = angle;
-            moveDirection = direction;
         }
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        if (target)
+        if (player)
         {
             rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
         }

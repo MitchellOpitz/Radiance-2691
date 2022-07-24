@@ -125,6 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  xpAmount: 20
+  playerLevel: {fileID: 0}
 --- !u!114 &3473718812307326267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +141,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 3473718812307326264}
-  target: {fileID: 0}
 --- !u!50 &3473718812307326264
 Rigidbody2D:
   serializedVersion: 4
