@@ -5,12 +5,15 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100;
+    public int xpAmount = 20;
+    public LevelSystem playerLevel;
 
     private int healthRemaining;
     // Start is called before the first frame update
     void Start()
     {
         healthRemaining = maxHealth;
+        playerLevel = GameObject.FindGameObjectWithTag("Player").GetComponent<LevelSystem>();
     }
 
     // Update is called once per frame
@@ -34,5 +37,6 @@ public class EnemyHealth : MonoBehaviour
     void DestroyEnemy()
     {
         Destroy(gameObject);
+        playerLevel.AddXP(xpAmount);
     }
 }
