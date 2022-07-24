@@ -9,6 +9,9 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     public Camera cam;
 
+    public float maxX = 5f;
+    public float maxY = 5f;
+
     Vector2 movement;
     Vector2 mousePosition;
 
@@ -24,7 +27,12 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = new Vector2(
+            Mathf.Clamp(transform.position.x, -maxX, maxX),
+            Mathf.Clamp(transform.position.y, -maxY, maxY)
+            );
+
+    mousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
     }
 
     private void FixedUpdate()
