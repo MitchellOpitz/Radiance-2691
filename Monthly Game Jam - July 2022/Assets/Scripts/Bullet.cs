@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public int power = 5;
 
     // public GameObject hitEffect;
 
@@ -28,6 +29,11 @@ public class Bullet : MonoBehaviour
     {
         // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         // Destroy(effect, 5f);
+
+        if(collision.transform.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(power);
+        }
 
         Destroy(gameObject);
     }
