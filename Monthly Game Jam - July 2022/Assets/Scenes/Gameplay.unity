@@ -355,63 +355,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &143753447
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3473718812307326260, guid: 451c4b7a6ea61ea4b840a2020d765a44, type: 3}
-      propertyPath: m_RootOrder
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473718812307326260, guid: 451c4b7a6ea61ea4b840a2020d765a44, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 19.86
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473718812307326260, guid: 451c4b7a6ea61ea4b840a2020d765a44, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 19.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473718812307326260, guid: 451c4b7a6ea61ea4b840a2020d765a44, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473718812307326260, guid: 451c4b7a6ea61ea4b840a2020d765a44, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473718812307326260, guid: 451c4b7a6ea61ea4b840a2020d765a44, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473718812307326260, guid: 451c4b7a6ea61ea4b840a2020d765a44, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473718812307326260, guid: 451c4b7a6ea61ea4b840a2020d765a44, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473718812307326260, guid: 451c4b7a6ea61ea4b840a2020d765a44, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473718812307326260, guid: 451c4b7a6ea61ea4b840a2020d765a44, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473718812307326260, guid: 451c4b7a6ea61ea4b840a2020d765a44, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3473718812307326262, guid: 451c4b7a6ea61ea4b840a2020d765a44, type: 3}
-      propertyPath: m_Name
-      value: Enemy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 451c4b7a6ea61ea4b840a2020d765a44, type: 3}
 --- !u!1001 &158064490
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1642,7 +1585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1229295124}
   bulletPrefab: {fileID: 2012272804112135014, guid: 335fed940ab060047bc0a09c37ccc37b, type: 3}
-  shotInterval: 0.25
+  shotInterval: 0.01
   bulletSpeed: 20
 --- !u!114 &868196881
 MonoBehaviour:
@@ -1657,6 +1600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 272907907}
+  spawner: {fileID: 68231874}
 --- !u!1 &878118890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2047,7 +1991,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8e88614a5d2aead4998a8c70955662c6, type: 3}
+  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
   m_Color: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2089,7 +2033,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.64}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

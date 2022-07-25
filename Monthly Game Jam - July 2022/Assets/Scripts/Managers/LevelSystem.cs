@@ -6,6 +6,7 @@ public class LevelSystem : MonoBehaviour
 
     // Public variables
     public UIManager UI;
+    public EnemySpawner spawner;
 
     // Private variables
     private int level;
@@ -30,6 +31,7 @@ public class LevelSystem : MonoBehaviour
             currentXP -= xpToNextLevel;
             xpToNextLevel = (int)(xpToNextLevel * 1.1);
             UI.UpdateLevelText("" + level);
+            spawner.IncreaseSpawnRate();
         }
 
         UI.UpdateXPBar((float)currentXP / (float)xpToNextLevel);

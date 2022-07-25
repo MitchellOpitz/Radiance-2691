@@ -10,9 +10,12 @@ public class EnemySpawner : MonoBehaviour
     public float maxX = 5f;
     public float maxY = 5f;
 
+    // Private variables
+    Coroutine coroutine;
+
     void Start()
     {
-        StartCoroutine(spawnEnemy(spawnInterval, enemy));
+        coroutine = StartCoroutine(spawnEnemy(spawnInterval, enemy));
     }
 
     private IEnumerator spawnEnemy (float interval, GameObject enemy)
@@ -35,6 +38,11 @@ public class EnemySpawner : MonoBehaviour
                 0), Quaternion.identity);
         }
 
-        StartCoroutine(spawnEnemy(interval, enemy));
+        StartCoroutine(spawnEnemy(spawnInterval, enemy));
+    }
+
+    public void IncreaseSpawnRate()
+    {
+        spawnInterval -= (spawnInterval * 0.1f);
     }
 }
