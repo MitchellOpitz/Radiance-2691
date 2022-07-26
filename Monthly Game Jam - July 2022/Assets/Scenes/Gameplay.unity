@@ -295,7 +295,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1547835356}
   bulletPrefab: {fileID: 2012272804112135014, guid: 335fed940ab060047bc0a09c37ccc37b, type: 3}
-  shotInterval: 0.1
+  shotInterval: 0.25
   bulletSpeed: 20
   audioManager: {fileID: 0}
 --- !u!114 &232056200
@@ -564,7 +564,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -584,7 +584,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 2012499219}
   bulletPrefab: {fileID: 2012272804112135014, guid: 335fed940ab060047bc0a09c37ccc37b, type: 3}
-  shotInterval: 0.1
+  shotInterval: 0.25
   bulletSpeed: 20
   audioManager: {fileID: 0}
 --- !u!114 &288682767
@@ -2438,7 +2438,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2458,7 +2458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 541450652}
   bulletPrefab: {fileID: 2012272804112135014, guid: 335fed940ab060047bc0a09c37ccc37b, type: 3}
-  shotInterval: 0.1
+  shotInterval: 0.25
   bulletSpeed: 20
   audioManager: {fileID: 0}
 --- !u!114 &1025981201
@@ -2630,7 +2630,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2650,7 +2650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1333187658}
   bulletPrefab: {fileID: 2012272804112135014, guid: 335fed940ab060047bc0a09c37ccc37b, type: 3}
-  shotInterval: 0.1
+  shotInterval: 0.25
   bulletSpeed: 20
   audioManager: {fileID: 0}
 --- !u!114 &1074407294
@@ -2843,7 +2843,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2863,7 +2863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 453330448}
   bulletPrefab: {fileID: 2012272804112135014, guid: 335fed940ab060047bc0a09c37ccc37b, type: 3}
-  shotInterval: 0.1
+  shotInterval: 0.25
   bulletSpeed: 20
   audioManager: {fileID: 0}
 --- !u!114 &1160457712
@@ -3617,7 +3617,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -3637,7 +3637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 1823114437}
   bulletPrefab: {fileID: 2012272804112135014, guid: 335fed940ab060047bc0a09c37ccc37b, type: 3}
-  shotInterval: 0.1
+  shotInterval: 0.25
   bulletSpeed: 20
   audioManager: {fileID: 0}
 --- !u!114 &1531345328
@@ -4123,7 +4123,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -4143,7 +4143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 831546903}
   bulletPrefab: {fileID: 2012272804112135014, guid: 335fed940ab060047bc0a09c37ccc37b, type: 3}
-  shotInterval: 0.1
+  shotInterval: 0.25
   bulletSpeed: 20
   audioManager: {fileID: 0}
 --- !u!114 &1794556136
@@ -4558,7 +4558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 365671786}
   bulletPrefab: {fileID: 2012272804112135014, guid: 335fed940ab060047bc0a09c37ccc37b, type: 3}
-  shotInterval: 0.1
+  shotInterval: 0.25
   bulletSpeed: 20
   audioManager: {fileID: 0}
 --- !u!50 &1934042337
@@ -4576,7 +4576,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1

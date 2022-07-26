@@ -18,10 +18,11 @@ public class Bullet : MonoBehaviour
     {
         // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         // Destroy(effect, 5f);  // Cleans up hit effects game objects in the hierarchy.
-
+        
         if(collision.transform.tag == "Enemy")
+        {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
-
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 }
