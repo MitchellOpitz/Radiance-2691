@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     // Public variables
     public int maxHealth = 100;
     public int xpAmount = 20;
+    public int scoreAmount = 10;
 
     // Private variables
     private int healthRemaining;
@@ -28,7 +29,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (healthRemaining <= 0)
         {
-            scoreText.UpdateScore(10);
+            scoreText.UpdateScore(scoreAmount);
             audioManager.Play();
             Destroy(gameObject);
             playerLevel.AddXP(xpAmount);
