@@ -8,11 +8,13 @@ public class GameManager : MonoBehaviour
     // Private variables
     private int shopPoints;
     private int totalHelpers;
+    private int rateOfFireRank;
 
     private void Awake()
     {
-        shopPoints = 0;
+        shopPoints = 8;
         totalHelpers = 0;
+        rateOfFireRank = 0;
     }
 
     public void AddShopPoint()
@@ -39,5 +41,15 @@ public class GameManager : MonoBehaviour
     public void AddHelper()
     {
         totalHelpers++;
+    }
+
+    public void AddRateOfFireRank()
+    {
+        rateOfFireRank++;
+    }
+
+    public int GetRateOfFireRank()
+    {
+        return rateOfFireRank;
     }
 }
