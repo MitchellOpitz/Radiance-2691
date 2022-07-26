@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
     // Public variables
     public float moveSpeed = 10f;
     public Rigidbody2D rb;
-    public Camera cam;    
+    public Camera cam;
     public float maxX = 5f;
     public float maxY = 5f;
 
