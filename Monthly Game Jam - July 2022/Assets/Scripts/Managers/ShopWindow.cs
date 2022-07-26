@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopWindow : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class ShopWindow : MonoBehaviour
     // Public variables
     public GameObject shopWindow;
     public Pause pauseMenu;
+    public GameManager gameManager;
+    public Text pointsAvailable;
 
     public bool shopOpen = false;
 
@@ -22,6 +25,7 @@ public class ShopWindow : MonoBehaviour
         shopOpen = true;
         pauseMenu.setGameplayMode(0);
         shopWindow.SetActive(true);
+        DisplayShopPoints();
     }
 
     public void CloseShopWindow()
@@ -29,5 +33,10 @@ public class ShopWindow : MonoBehaviour
         shopOpen = false;
         pauseMenu.setGameplayMode(1);
         shopWindow.SetActive(false);
+    }
+
+    void DisplayShopPoints()
+    {
+        pointsAvailable.text = "Points available: " + gameManager.GetShopPoints();
     }
 }
