@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private int shopPoints;
     private int totalHelpers;
     private int rateOfFireRank;
+    private int scoreMultiplierRank;
 
     private void Awake()
     {
@@ -51,5 +52,15 @@ public class GameManager : MonoBehaviour
     public int GetRateOfFireRank()
     {
         return rateOfFireRank;
+    }
+
+    public void AddScoreMultiplierRank()
+    {
+        scoreMultiplierRank++;
+    }
+
+    public int GetScoreMultiplierRank()
+    {
+        return scoreMultiplierRank;
     }
 }
