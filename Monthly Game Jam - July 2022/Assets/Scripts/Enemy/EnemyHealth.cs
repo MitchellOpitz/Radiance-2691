@@ -12,12 +12,14 @@ public class EnemyHealth : MonoBehaviour
     private int healthRemaining;
     private LevelSystem playerLevel;
     private AudioSource audioManager;
+    private Score scoreText;
 
     void Awake()
     {
         healthRemaining = maxHealth;
         playerLevel = GameObject.FindGameObjectWithTag("Player").GetComponent<LevelSystem>();
         audioManager = GameObject.Find("Sound Effects").GetComponent<AudioSource>();
+        scoreText = GameObject.Find("Score Text").GetComponent<Score>();
     }
 
     public void TakeDamage(int damageAmount)
@@ -26,6 +28,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (healthRemaining <= 0)
         {
+            scoreText.UpdateScore(10);
             audioManager.Play();
             Destroy(gameObject);
             playerLevel.AddXP(xpAmount);
