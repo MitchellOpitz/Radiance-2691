@@ -7,9 +7,9 @@ public class PurchaseHelper : MonoBehaviour
 {
 
     public GameManager gameManager;
+    public ShopWindow shopWindow;
+    public Text buttonText;
 
-    private int pointsAvailable;
-    private int numberOfHelpers;
     public GameObject redHelper;
     public GameObject orangeHelper;
     public GameObject yellowHelper;
@@ -18,6 +18,9 @@ public class PurchaseHelper : MonoBehaviour
     public GameObject blueHelper;
     public GameObject purpleHelper;
     public GameObject pinkHelper;
+
+    private int pointsAvailable;
+    private int numberOfHelpers;
 
     public void PurchaseNewHelper()
     {
@@ -52,10 +55,12 @@ public class PurchaseHelper : MonoBehaviour
                 case 7:
                     pinkHelper.SetActive(true);
                     gameObject.GetComponent<Button>().interactable = false;
+                    buttonText.text = "Max";
                     break;
             }
             gameManager.SpendPoint();
             gameManager.AddHelper();
+            shopWindow.DisplayShopPoints();
         }
     }
 }

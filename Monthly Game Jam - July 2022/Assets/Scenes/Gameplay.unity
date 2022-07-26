@@ -276,6 +276,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 681883929}
+  shopWindow: {fileID: 763660722}
+  buttonText: {fileID: 1792729094}
   redHelper: {fileID: 1934042332}
   orangeHelper: {fileID: 1794556133}
   yellowHelper: {fileID: 1160457709}

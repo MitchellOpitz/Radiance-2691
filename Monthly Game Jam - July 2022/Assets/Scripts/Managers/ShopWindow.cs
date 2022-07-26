@@ -35,7 +35,7 @@ public class ShopWindow : MonoBehaviour
         shopWindow.SetActive(false);
     }
 
-    void DisplayShopPoints()
+    public void DisplayShopPoints()
     {
         pointsAvailable.text = "Points available: " + gameManager.GetShopPoints();
     }
