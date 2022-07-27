@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 
     // Public variables
     public int damage = 5;
+    public BoxCollider2D player;
     // public GameObject hitEffect;
 
     private GameManager gameManager;
@@ -13,6 +14,8 @@ public class Bullet : MonoBehaviour
     private void Awake()
     {
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        player = GameObject.Find("Player").GetComponent<BoxCollider2D>();
+        Physics2D.IgnoreCollision(gameObject.GetComponent<CircleCollider2D>(), player);
     }
 
     // Occurs when bullet exits Field of Play game object.
@@ -23,10 +26,17 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+
+        if (collision.gameObject.tag == "Bullet")
+            Physics2D.IgnoreCollision(
+                collision.gameObject.GetComponent<CircleCollider2D>(),
+                GetComponent<CircleCollider2D>()
+                );
+
         // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         // Destroy(effect, 5f);  // Cleans up hit effects game objects in the hierarchy.
-        
-        if(collision.transform.tag == "Enemy")
+
+        if (collision.transform.tag == "Enemy")
         {
             var totalDamage = damage + (damage * gameManager.GetDamageMultiplierRank());
             Debug.Log("Current damage: " + totalDamage);
