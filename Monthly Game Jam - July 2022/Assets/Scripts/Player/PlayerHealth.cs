@@ -50,7 +50,7 @@ public class PlayerHealth : MonoBehaviour
         if (collision.transform.tag == "Enemy")
         {
             currentHealth--;
-            healthText.text = "Health Remaining: " + currentHealth;
+            healthText.text = "HEALTH: " + currentHealth;
 
             if(currentHealth <= 0)
             {

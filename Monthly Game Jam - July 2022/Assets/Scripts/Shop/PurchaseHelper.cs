@@ -55,7 +55,7 @@ public class PurchaseHelper : MonoBehaviour
                 case 7:
                     pinkHelper.SetActive(true);
                     gameObject.GetComponent<Button>().interactable = false;
-                    buttonText.text = "Max";
+                    buttonText.text = "MAX";
                     break;
             }
             gameManager.SpendPoint();

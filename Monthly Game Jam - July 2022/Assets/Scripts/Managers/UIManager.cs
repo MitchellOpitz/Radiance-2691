@@ -10,7 +10,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateLevelText(string level)
     {
-        levelText.text = ("Level: " + level);
+        levelText.text = ("LEVEL: " + level);
     }
 
     public void UpdateXPBar(float percentage)

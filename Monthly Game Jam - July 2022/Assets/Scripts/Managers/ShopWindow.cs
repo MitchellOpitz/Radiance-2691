@@ -37,6 +37,6 @@ public class ShopWindow : MonoBehaviour
 
     public void DisplayShopPoints()
     {
-        pointsAvailable.text = "Points available: " + gameManager.GetShopPoints();
+        pointsAvailable.text = "POINTS AVAILABLE: " + gameManager.GetShopPoints();
     }
 }

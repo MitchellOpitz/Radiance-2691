@@ -27,7 +27,7 @@ public class PurchaseScoreMultiplier : MonoBehaviour
             if (currentRank == 7)
             {
                 gameObject.GetComponent<Button>().interactable = false;
-                buttonText.text = "Max";
+                buttonText.text = "MAX";
             }
         }
     }
