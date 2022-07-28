@@ -28,7 +28,6 @@ public class EnemyHealth : MonoBehaviour
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         maxHealth = 20 + (5 * gameManager.GetLevel());
         color = gameObject.GetComponent<SpriteRenderer>().color;
-        Debug.Log(maxHealth);
     }
 
     public void TakeDamage(int damageAmount)
