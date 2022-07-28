@@ -6070,6 +6070,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1025981198}
     - target: {fileID: 4851158466412998147, guid: db8cb6d503a2cd846940c2a7cac3987d, type: 3}
+      propertyPath: deathSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5250e093bfc92754494356e11ad589c0, type: 3}
+    - target: {fileID: 4851158466412998147, guid: db8cb6d503a2cd846940c2a7cac3987d, type: 3}
       propertyPath: healthText
       value: 
       objectReference: {fileID: 1517923518}
@@ -6081,6 +6085,10 @@ PrefabInstance:
       propertyPath: tealHelper
       value: 
       objectReference: {fileID: 1531345325}
+    - target: {fileID: 4851158466412998147, guid: db8cb6d503a2cd846940c2a7cac3987d, type: 3}
+      propertyPath: damageSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 872a23bb241ac2a4488024ab42a8dc06, type: 3}
     - target: {fileID: 4851158466412998147, guid: db8cb6d503a2cd846940c2a7cac3987d, type: 3}
       propertyPath: greenHelper
       value: 

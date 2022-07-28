@@ -20,6 +20,9 @@ public class PlayerHealth : MonoBehaviour
     public GameObject purpleHelper;
     public GameObject pinkHelper;
 
+    public AudioClip deathSound;
+    public AudioClip damageSound;
+
     // Private variables
     private int maxHealth;
     private int currentHealth;
@@ -27,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
     private float invulnerabilityDuration = 1.5f;
     private GameObject enemySpawner;
     private CameraMovement cam;
+    private AudioSource audioManager;
 
     private Color color;
 
@@ -37,6 +41,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         enemySpawner = GameObject.Find("Enemy Spawner");
         cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
+        audioManager = GameObject.Find("Sound Effects").GetComponent<AudioSource>();
         color = gameObject.GetComponent<SpriteRenderer>().color;
     }
 
@@ -56,8 +61,11 @@ public class PlayerHealth : MonoBehaviour
             currentHealth--;
             healthText.text = "HEALTH: " + currentHealth;
 
-            if(currentHealth <= 0)
+            audioManager.clip = damageSound;
+
+            if (currentHealth <= 0)
             {
+                audioManager.clip = deathSound;
                 cam.enabled = false;
                 enemySpawner.SetActive(false);
                 redHelper.GetComponent<Helper>().DestroyHelper();
@@ -74,10 +82,10 @@ public class PlayerHealth : MonoBehaviour
                 ParticleSystem.ShapeModule shapes = particles.GetComponent<ParticleSystem>().shape;
                 shapes.radius = 2;
                 GameObject particleEffects = Instantiate(particles, transform.position, transform.rotation);
-
+                audioManager.Play();
                 Destroy(gameObject);
             }
-
+            audioManager.Play();
             StartCoroutine(TempInvulnerability());
         }
     }

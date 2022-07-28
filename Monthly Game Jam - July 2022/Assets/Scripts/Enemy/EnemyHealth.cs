@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 20;
     public int xpAmount = 20;
     public GameObject particles;
+    public AudioClip damageSound;
 
     // Private variables
     private int healthRemaining;
@@ -51,6 +52,7 @@ public class EnemyHealth : MonoBehaviour
             GameObject particleEffects = Instantiate(particles, transform.position, transform.rotation);
             scoreAmount = 10 * (gameManager.GetScoreMultiplierRank() + 1) * bossScoreScale;
             scoreText.UpdateScore(scoreAmount);
+            audioManager.clip = damageSound;
             audioManager.Play();
             Destroy(gameObject);
             playerLevel.AddXP(xpAmount);
