@@ -16,6 +16,9 @@ public class EnemyHealth : MonoBehaviour
     private Score scoreText;
     private GameManager gameManager;
     private int scoreAmount;
+    private int bossScoreScale = 1;
+
+    private int level;
 
     private Color color;
 
@@ -26,8 +29,11 @@ public class EnemyHealth : MonoBehaviour
         audioManager = GameObject.Find("Sound Effects").GetComponent<AudioSource>();
         scoreText = GameObject.Find("Score Text").GetComponent<Score>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        maxHealth = 20 + (5 * gameManager.GetLevel());
+        level = gameManager.GetLevel();
+        maxHealth = 20 + (5 * level);
         color = gameObject.GetComponent<SpriteRenderer>().color;
+
+        BossCheck();
     }
 
     public void TakeDamage(int damageAmount)
@@ -39,11 +45,23 @@ public class EnemyHealth : MonoBehaviour
             GameObject particleEffects = Instantiate(particles, transform.position, transform.rotation);
             ParticleSystem.MainModule main = particleEffects.GetComponent<ParticleSystem>().main;
             main.startColor = color;
-            scoreAmount = 10 * (gameManager.GetScoreMultiplierRank() + 1);
+            scoreAmount = 10 * (gameManager.GetScoreMultiplierRank() + 1) * bossScoreScale;
             scoreText.UpdateScore(scoreAmount);
             audioManager.Play();
             Destroy(gameObject);
             playerLevel.AddXP(xpAmount);
+        }
+    }
+
+    void BossCheck()
+    {
+        int random = Random.Range(1, 101);
+        if(random < level)
+        {
+            maxHealth *= 3;
+            xpAmount *= 2;
+            bossScoreScale = 3;
+            gameObject.transform.localScale = new Vector3(2, 2, 1);
         }
     }
 }
