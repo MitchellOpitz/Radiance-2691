@@ -39,7 +39,6 @@ public class Bullet : MonoBehaviour
         if (collision.transform.tag == "Enemy")
         {
             var totalDamage = damage + (damage * gameManager.GetDamageMultiplierRank());
-            Debug.Log("Current damage: " + totalDamage);
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(totalDamage);
             Destroy(gameObject);
         }
