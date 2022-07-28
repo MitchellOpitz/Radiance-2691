@@ -33,6 +33,12 @@ public class EnemyHealth : MonoBehaviour
         maxHealth = 20 + (5 * level);
         color = gameObject.GetComponent<SpriteRenderer>().color;
 
+        ParticleSystem.MainModule main = particles.GetComponent<ParticleSystem>().main;
+        main.startColor = color;
+        main.duration = 1;
+        ParticleSystem.ShapeModule shapes = particles.GetComponent<ParticleSystem>().shape;
+        shapes.radius = 1;
+
         BossCheck();
     }
 
@@ -43,8 +49,6 @@ public class EnemyHealth : MonoBehaviour
         if (healthRemaining <= 0)
         {
             GameObject particleEffects = Instantiate(particles, transform.position, transform.rotation);
-            ParticleSystem.MainModule main = particleEffects.GetComponent<ParticleSystem>().main;
-            main.startColor = color;
             scoreAmount = 10 * (gameManager.GetScoreMultiplierRank() + 1) * bossScoreScale;
             scoreText.UpdateScore(scoreAmount);
             audioManager.Play();

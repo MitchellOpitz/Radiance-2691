@@ -68,8 +68,6 @@ public class PlayerHealth : MonoBehaviour
                 blueHelper.GetComponent<Helper>().DestroyHelper();
                 purpleHelper.GetComponent<Helper>().DestroyHelper();
                 pinkHelper.GetComponent<Helper>().DestroyHelper();
-
-                
                 ParticleSystem.MainModule main = particles.GetComponent<ParticleSystem>().main;
                 main.startColor = color;
                 main.duration = 2;
