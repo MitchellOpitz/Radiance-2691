@@ -17,6 +17,8 @@ public class EnemyHealth : MonoBehaviour
     private GameManager gameManager;
     private int scoreAmount;
 
+    private Color color;
+
     void Awake()
     {
         healthRemaining = maxHealth;
@@ -25,6 +27,7 @@ public class EnemyHealth : MonoBehaviour
         scoreText = GameObject.Find("Score Text").GetComponent<Score>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         maxHealth = 20 + (5 * gameManager.GetLevel());
+        color = gameObject.GetComponent<SpriteRenderer>().color;
         Debug.Log(maxHealth);
     }
 
@@ -35,6 +38,8 @@ public class EnemyHealth : MonoBehaviour
         if (healthRemaining <= 0)
         {
             GameObject particleEffects = Instantiate(particles, transform.position, transform.rotation);
+            ParticleSystem.MainModule main = particleEffects.GetComponent<ParticleSystem>().main;
+            main.startColor = color;
             scoreAmount = 10 * (gameManager.GetScoreMultiplierRank() + 1);
             scoreText.UpdateScore(scoreAmount);
             audioManager.Play();
