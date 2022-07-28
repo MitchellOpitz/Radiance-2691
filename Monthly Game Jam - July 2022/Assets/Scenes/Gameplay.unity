@@ -980,6 +980,7 @@ MonoBehaviour:
   radius: 4
   cam: {fileID: 1589917417}
   rb: {fileID: 232056198}
+  particles: {fileID: 237002537977618815, guid: 5b13bf4111c9e2b4f97ff6a768f5ccda, type: 3}
   player: {fileID: 868196875}
   centerPoint: {x: 0, y: 0}
   angle: 0
@@ -1251,6 +1252,7 @@ MonoBehaviour:
   radius: 2.5
   cam: {fileID: 1589917417}
   rb: {fileID: 288682765}
+  particles: {fileID: 237002537977618815, guid: 5b13bf4111c9e2b4f97ff6a768f5ccda, type: 3}
   player: {fileID: 868196875}
   centerPoint: {x: 0, y: 0}
   angle: 0
@@ -3260,6 +3262,7 @@ MonoBehaviour:
   radius: 3.5
   cam: {fileID: 1589917417}
   rb: {fileID: 1025981199}
+  particles: {fileID: 237002537977618815, guid: 5b13bf4111c9e2b4f97ff6a768f5ccda, type: 3}
   player: {fileID: 868196875}
   centerPoint: {x: 0, y: 0}
   angle: 0
@@ -3530,6 +3533,7 @@ MonoBehaviour:
   radius: 4.5
   cam: {fileID: 1589917417}
   rb: {fileID: 1074407292}
+  particles: {fileID: 237002537977618815, guid: 5b13bf4111c9e2b4f97ff6a768f5ccda, type: 3}
   player: {fileID: 868196875}
   centerPoint: {x: 0, y: 0}
   angle: 0
@@ -3821,6 +3825,7 @@ MonoBehaviour:
   radius: 2
   cam: {fileID: 1589917417}
   rb: {fileID: 1160457710}
+  particles: {fileID: 237002537977618815, guid: 5b13bf4111c9e2b4f97ff6a768f5ccda, type: 3}
   player: {fileID: 868196875}
   centerPoint: {x: 0, y: 0}
   angle: 0
@@ -4785,6 +4790,7 @@ MonoBehaviour:
   radius: 3
   cam: {fileID: 1589917417}
   rb: {fileID: 1531345326}
+  particles: {fileID: 237002537977618815, guid: 5b13bf4111c9e2b4f97ff6a768f5ccda, type: 3}
   player: {fileID: 868196875}
   centerPoint: {x: 0, y: 0}
   angle: 0
@@ -5448,6 +5454,7 @@ MonoBehaviour:
   radius: 1.5
   cam: {fileID: 1589917417}
   rb: {fileID: 1794556134}
+  particles: {fileID: 237002537977618815, guid: 5b13bf4111c9e2b4f97ff6a768f5ccda, type: 3}
   player: {fileID: 868196875}
   centerPoint: {x: 0, y: 0}
   angle: 0
@@ -5760,6 +5767,7 @@ MonoBehaviour:
   radius: 1
   cam: {fileID: 1589917417}
   rb: {fileID: 1934042337}
+  particles: {fileID: 237002537977618815, guid: 5b13bf4111c9e2b4f97ff6a768f5ccda, type: 3}
   player: {fileID: 868196875}
   centerPoint: {x: 0, y: 0}
   angle: 0
@@ -6049,6 +6057,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 681883929}
+    - target: {fileID: 4851158466412998147, guid: db8cb6d503a2cd846940c2a7cac3987d, type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 237002537977618815, guid: 5b13bf4111c9e2b4f97ff6a768f5ccda, type: 3}
     - target: {fileID: 4851158466412998147, guid: db8cb6d503a2cd846940c2a7cac3987d, type: 3}
       propertyPath: redHelper
       value: 

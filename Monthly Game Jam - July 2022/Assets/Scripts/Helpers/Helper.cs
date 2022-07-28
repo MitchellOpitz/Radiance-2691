@@ -9,10 +9,13 @@ public class Helper : MonoBehaviour
     public float radius = 1f;
     public Camera cam;
     public Rigidbody2D rb;
+    public GameObject particles;
 
     public GameObject player;
     public Vector2 centerPoint;
     public float angle;
+
+    private Color color;
 
     // Class variables
     Vector2 mousePosition;
@@ -22,6 +25,7 @@ public class Helper : MonoBehaviour
     void Start()
     {
         centerPoint = player.transform.position;
+        color = gameObject.GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
@@ -39,5 +43,13 @@ public class Helper : MonoBehaviour
 
         float rotationAngle = Mathf.Atan2(moveDirection.y, moveDirection.x) * Mathf.Rad2Deg + 90f;
         rb.rotation = rotationAngle;
+    }
+
+    public void DestroyHelper()
+    {
+        GameObject particleEffects = Instantiate(particles, transform.position, transform.rotation);
+        ParticleSystem.MainModule main = particleEffects.GetComponent<ParticleSystem>().main;
+        main.startColor = color;
+        Destroy(gameObject);
     }
 }

@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public GameObject player;
     public GameObject playerGun;
     public Text healthText;
+    public GameObject particles;
 
     public GameObject redHelper;
     public GameObject orangeHelper;
@@ -27,6 +28,8 @@ public class PlayerHealth : MonoBehaviour
     private GameObject enemySpawner;
     private CameraMovement cam;
 
+    private Color color;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = maxHealth;
         enemySpawner = GameObject.Find("Enemy Spawner");
         cam = GameObject.Find("Main Camera").GetComponent<CameraMovement>();
+        color = gameObject.GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
@@ -56,14 +60,23 @@ public class PlayerHealth : MonoBehaviour
             {
                 cam.enabled = false;
                 enemySpawner.SetActive(false);
-                redHelper.SetActive(false);
-                orangeHelper.SetActive(false);
-                yellowHelper.SetActive(false);
-                greenHelper.SetActive(false);
-                tealHelper.SetActive(false);
-                blueHelper.SetActive(false);
-                purpleHelper.SetActive(false);
-                pinkHelper.SetActive(false);
+                redHelper.GetComponent<Helper>().DestroyHelper();
+                orangeHelper.GetComponent<Helper>().DestroyHelper();
+                yellowHelper.GetComponent<Helper>().DestroyHelper();
+                greenHelper.GetComponent<Helper>().DestroyHelper();
+                tealHelper.GetComponent<Helper>().DestroyHelper();
+                blueHelper.GetComponent<Helper>().DestroyHelper();
+                purpleHelper.GetComponent<Helper>().DestroyHelper();
+                pinkHelper.GetComponent<Helper>().DestroyHelper();
+
+                
+                ParticleSystem.MainModule main = particles.GetComponent<ParticleSystem>().main;
+                main.startColor = color;
+                main.duration = 2;
+                ParticleSystem.ShapeModule shapes = particles.GetComponent<ParticleSystem>().shape;
+                shapes.radius = 2;
+                GameObject particleEffects = Instantiate(particles, transform.position, transform.rotation);
+
                 Destroy(gameObject);
             }
 
