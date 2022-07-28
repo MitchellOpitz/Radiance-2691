@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
 
+    public GameObject unspentPoints;
+
     // Private variables
     private int shopPoints;
     private int totalHelpers;
@@ -22,12 +24,16 @@ public class GameManager : MonoBehaviour
     public void AddShopPoint()
     {
         shopPoints++;
-        // Debug.Log("Total Shop Points: " + shopPoints);
+        unspentPoints.SetActive(true);
     }
 
     public void SpendPoint()
     {
         shopPoints--;
+        if (shopPoints == 0)
+        {
+            unspentPoints.SetActive(false);
+        }
     }
 
     public int GetShopPoints()
