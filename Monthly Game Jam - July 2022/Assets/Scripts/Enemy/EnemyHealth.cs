@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     // Public variables
     public int maxHealth = 100;
     public int xpAmount = 20;
+    public GameObject particles;
 
     // Private variables
     private int healthRemaining;
@@ -31,6 +32,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (healthRemaining <= 0)
         {
+            GameObject particleEffects = Instantiate(particles, transform.position, transform.rotation);
             scoreAmount = 10 * (gameManager.GetScoreMultiplierRank() + 1);
             scoreText.UpdateScore(scoreAmount);
             audioManager.Play();

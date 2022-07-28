@@ -127,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   xpAmount: 100
-  scoreAmount: 10
+  particles: {fileID: 237002537977618815, guid: 5b13bf4111c9e2b4f97ff6a768f5ccda, type: 3}
 --- !u!114 &8947697912275430676
 MonoBehaviour:
   m_ObjectHideFlags: 0
