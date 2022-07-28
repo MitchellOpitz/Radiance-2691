@@ -13,12 +13,15 @@ public class GameManager : MonoBehaviour
     private int rateOfFireRank;
     private int scoreMultiplierRank;
     private int damageMultiplierRank;
+    private int currentLevel;
 
     private void Awake()
     {
         shopPoints = 8;
         totalHelpers = 0;
         rateOfFireRank = 0;
+        rateOfFireRank = 1;
+        currentLevel = 1;
     }
 
     public void AddShopPoint()
@@ -79,5 +82,15 @@ public class GameManager : MonoBehaviour
     public int GetDamageMultiplierRank()
     {
         return damageMultiplierRank;
+    }
+
+    public void AddLevel()
+    {
+        currentLevel++;
+    }
+
+    public int GetLevel()
+    {
+        return currentLevel;
     }
 }

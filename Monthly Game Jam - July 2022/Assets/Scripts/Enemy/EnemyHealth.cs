@@ -5,7 +5,7 @@ public class EnemyHealth : MonoBehaviour
 {
 
     // Public variables
-    public int maxHealth = 100;
+    public int maxHealth = 20;
     public int xpAmount = 20;
     public GameObject particles;
 
@@ -24,6 +24,8 @@ public class EnemyHealth : MonoBehaviour
         audioManager = GameObject.Find("Sound Effects").GetComponent<AudioSource>();
         scoreText = GameObject.Find("Score Text").GetComponent<Score>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        maxHealth = 20 + (5 * gameManager.GetLevel());
+        Debug.Log(maxHealth);
     }
 
     public void TakeDamage(int damageAmount)

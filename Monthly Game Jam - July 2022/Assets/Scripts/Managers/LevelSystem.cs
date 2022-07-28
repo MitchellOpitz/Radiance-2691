@@ -34,6 +34,7 @@ public class LevelSystem : MonoBehaviour
             UI.UpdateLevelText("" + level);
             spawner.IncreaseSpawnRate();
             gameManager.AddShopPoint();
+            gameManager.AddLevel();
         }
 
         UI.UpdateXPBar((float)currentXP / (float)xpToNextLevel);
