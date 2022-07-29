@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        shopPoints = 8;
+        shopPoints = 0;
         totalHelpers = 0;
         rateOfFireRank = 0;
         rateOfFireRank = 1;
