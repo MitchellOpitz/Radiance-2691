@@ -31,6 +31,7 @@ public class PlayerHealth : MonoBehaviour
     private GameObject enemySpawner;
     private CameraMovement cam;
     private AudioSource audioManager;
+    public Score finalScore;
 
     private Color color;
 
@@ -83,6 +84,7 @@ public class PlayerHealth : MonoBehaviour
                 shapes.radius = 2;
                 GameObject particleEffects = Instantiate(particles, transform.position, transform.rotation);
                 audioManager.Play();
+                finalScore.GameOverScore();
                 Destroy(gameObject);
             }
             audioManager.Play();
