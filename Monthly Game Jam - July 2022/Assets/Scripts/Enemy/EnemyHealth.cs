@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 
     // Public variables
     public int maxHealth = 20;
-    public int xpAmount = 20;
+    public int xpAmount = 10;
     public GameObject particles;
     public AudioClip damageSound;
 
